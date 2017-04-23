@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88AF8F4B-8CEC-41C9-BA69-A729C6CC8355}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Vidzy.CodeFirst</RootNamespace>
+    <AssemblyName>Vidzy.CodeFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityConfigurations\TagConfiguration.cs" />
+    <Compile Include="Migrations\201704100106441_5thIterationVideoTags.cs" />
+    <Compile Include="Migrations\201704100106441_5thIterationVideoTags.Designer.cs">
+      <DependentUpon>201704100106441_5thIterationVideoTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs" />
+    <Compile Include="Classification.cs" />
+    <Compile Include="EntityConfigurations\GenreConfiguration.cs" />
+    <Compile Include="EntityConfigurations\VideoConfiguration.cs" />
+    <Compile Include="Genre.cs" />
+    <Compile Include="Migrations\201704090240359_InitialModel.cs" />
+    <Compile Include="Migrations\201704090240359_InitialModel.Designer.cs">
+      <DependentUpon>201704090240359_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704090248206_PopulateGenres.cs" />
+    <Compile Include="Migrations\201704090248206_PopulateGenres.Designer.cs">
+      <DependentUpon>201704090248206_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704090250587_AddRelationshipOnlyOneGenrePerVideoTable.cs" />
+    <Compile Include="Migrations\201704090250587_AddRelationshipOnlyOneGenrePerVideoTable.Designer.cs">
+      <DependentUpon>201704090250587_AddRelationshipOnlyOneGenrePerVideoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704090255207_AddClassificationColumnToVideosTable.cs" />
+    <Compile Include="Migrations\201704090255207_AddClassificationColumnToVideosTable.Designer.cs">
+      <DependentUpon>201704090255207_AddClassificationColumnToVideosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704100059317_4thIterationOverridingConvetions.cs" />
+    <Compile Include="Migrations\201704100059317_4thIterationOverridingConvetions.Designer.cs">
+      <DependentUpon>201704100059317_4thIterationOverridingConvetions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Video.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VidzyContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704090240359_InitialModel.resx">
+      <DependentUpon>201704090240359_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704090248206_PopulateGenres.resx">
+      <DependentUpon>201704090248206_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704090250587_AddRelationshipOnlyOneGenrePerVideoTable.resx">
+      <DependentUpon>201704090250587_AddRelationshipOnlyOneGenrePerVideoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704090255207_AddClassificationColumnToVideosTable.resx">
+      <DependentUpon>201704090255207_AddClassificationColumnToVideosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704100059317_4thIterationOverridingConvetions.resx">
+      <DependentUpon>201704100059317_4thIterationOverridingConvetions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704100106441_5thIterationVideoTags.resx">
+      <DependentUpon>201704100106441_5thIterationVideoTags.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
